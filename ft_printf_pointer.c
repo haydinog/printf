@@ -6,7 +6,7 @@
 /*   By: haydinog <haydinog@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/03 12:02:40 by haydinog          #+#    #+#             */
-/*   Updated: 2026/02/03 12:38:57 by haydinog         ###   ########.fr       */
+/*   Updated: 2026/02/03 12:49:04 by haydinog         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,5 +35,4 @@ int	ft_putpointer(unsigned long ptr)
 	len += write(1, "0x", 2);
 	len += ft_puthex_ptr(ptr);
 	return (len);
-
 }

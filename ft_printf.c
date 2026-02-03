@@ -6,7 +6,7 @@
 /*   By: haydinog <haydinog@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/03 11:45:01 by haydinog          #+#    #+#             */
-/*   Updated: 2026/02/03 12:20:05 by haydinog         ###   ########.fr       */
+/*   Updated: 2026/02/03 12:52:51 by haydinog         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,26 +34,26 @@ static int	formats(char c, va_list args)
 	return (len);
 }
 
-int ft_printf(const char *format, ...)
+int	ft_printf(const char *format, ...)
 {
-    va_list args;
-    int     i;
-    int     len;
-    
-    i = 0;
-    len = 0;
-    va_start(args, format);
-    while(format && format[i])
-    {
-        if (format[i] == '%')
-        {
-            i++;
-            len += formats(format[i], args);
-        }
-        else
-            len+= ft_putchar(format[i]);
-        i++;
-    }
-    va_end(args);
-    return(len);
+	va_list	args;
+	int		i;
+	int		len;
+
+	i = 0;
+	len = 0;
+	va_start(args, format);
+	while (format && format[i])
+	{
+		if (format[i] == '%')
+		{
+			i++;
+			len += formats(format[i], args);
+		}
+		else
+			len+= ft_putchar(format[i]);
+		i++;
+	}
+	va_end(args);
+	return (len);
 }

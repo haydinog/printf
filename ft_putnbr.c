@@ -6,7 +6,7 @@
 /*   By: haydinog <haydinog@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/03 11:53:14 by haydinog          #+#    #+#             */
-/*   Updated: 2026/02/03 12:22:10 by haydinog         ###   ########.fr       */
+/*   Updated: 2026/02/03 12:49:51 by haydinog         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int	ft_putnbr_unsigned(unsigned int n)
 
 	len = 0;
 	if (n >= 10)
-		len += ft_putnbr_unsigned(n / 10); 
+		len += ft_putnbr_unsigned(n / 10);
 	len += ft_putchar((n % 10) + '0');
 	return (len);
 }
