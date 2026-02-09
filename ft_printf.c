@@ -42,10 +42,14 @@ int	ft_printf(const char *format, ...)
 
 	i = 0;
 	len = 0;
+	if (!format)
+		return -1;
 	va_start(args, format);
 	while (format && format[i])
 	{
-		if (format[i] == '%')
+		if (format[i] == '%' && format[i + 1] != '\0')
+			return -1;
+		else if (format[i] == '%')
 		{
 			i++;
 			len += formats(format[i], args);
