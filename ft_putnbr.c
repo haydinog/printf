@@ -12,7 +12,7 @@
 
 #include "ft_printf.h"
 
-int	ft_putnbr(int n)
+int	ft_putnbr(long n)
 {
 	long	nb;
 	int		len;
@@ -30,29 +30,33 @@ int	ft_putnbr(int n)
 	return (len);
 }
 
-int	ft_putnbr_unsigned(unsigned int n)
+int	ft_putnbr_unsigned(unsigned long n)
 {
-	int	len;
+	int		len;
+	long	nb;
 
+	nb = n;
 	len = 0;
-	if (n >= 10)
-		len += ft_putnbr_unsigned(n / 10);
-	len += ft_putchar((n % 10) + '0');
+	if (nb >= 10)
+		len += ft_putnbr_unsigned(nb / 10);
+	len += ft_putchar((nb % 10) + '0');
 	return (len);
 }
 
-int	ft_puthex(unsigned int n, char format)
+int	ft_puthex(unsigned long n, char format)
 {
 	int		len;
 	char	*base;
+	long	nb;
 
+	nb = n;
 	len = 0;
 	if (format == 'x')
 		base = "0123456789abcdef";
 	else
 		base = "0123456789ABCDEF";
-	if (n >= 16)
-		len += ft_puthex(n / 16, format);
-	len += ft_putchar(base[n % 16]);
+	if (nb >= 16)
+		len += ft_puthex(nb / 16, format);
+	len += ft_putchar(base[nb % 16]);
 	return (len);
 }

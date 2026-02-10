@@ -29,8 +29,8 @@ int	ft_putpointer(unsigned long ptr)
 {
 	int	len;
 
-	if (ptr == 0)
-		return (write(1, "(null)", 5));
+	if (ptr == '\0')
+		return (write(1, "(nil)", 5));
 	len = 0;
 	len += write(1, "0x", 2);
 	len += ft_puthex_ptr(ptr);

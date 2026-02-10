@@ -43,19 +43,19 @@ int	ft_printf(const char *format, ...)
 	i = 0;
 	len = 0;
 	if (!format)
-		return -1;
+		return (-1);
 	va_start(args, format);
 	while (format && format[i])
 	{
-		if (format[i] == '%' && format[i + 1] != '\0')
-			return -1;
-		else if (format[i] == '%')
+		if (format[i] == '%')
 		{
+			if (!format[i + 1])
+				return (-1);
 			i++;
 			len += formats(format[i], args);
 		}
 		else
-			len+= ft_putchar(format[i]);
+			len += ft_putchar(format[i]);
 		i++;
 	}
 	va_end(args);
